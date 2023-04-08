@@ -1,0 +1,14 @@
+
+#clr-button {
+    border-radius: 12px;
+}
+
+#msg-group {
+    display: block;
+    border-style: groove;
+    border-color: rgba(230, 230, 230, 0.74);
+    border-radius: 12px;
+    margin-left: 20px;
+    position: relative;
+    margin-top: 40px;
+}

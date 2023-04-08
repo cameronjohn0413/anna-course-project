@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+.navtab-ul {
+    border: none;
+}
+
+nav {
+  margin: 0 0 0 0;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+hr {
+  margin: 1.5rem 0;
+}
+
+/* body {
+  padding: .5rem;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+} */
+
+body {
+  background-color: rgb(245, 245, 245);
+}

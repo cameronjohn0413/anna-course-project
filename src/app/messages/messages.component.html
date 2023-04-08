@@ -1,0 +1,6 @@
+<div class="container" *ngIf="messageService.messages.length" id="msg-group">
+
+    <h5 class="display-6">Audit Log</h5>
+    <button type="button" class="clear" (click)="messageService.clear()" id="clr-button">Clear messages</button>
+    <div *ngFor="let message of messageService.messages"> {{message}} </div>
+</div>

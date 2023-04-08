@@ -1,0 +1,33 @@
+.main-nav #nav-id {
+    margin: 0 0 0 0;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/* .nav-item {
+    margin-left: 10px;
+    width: 100px;
+    font-size: medium;
+    border: none;
+} */
+
+/* .navtab-ul {
+    border: none;
+} */
+
+.header-class {
+    box-sizing: none;
+    position: absolute;
+    text-align: center;
+    margin-right: 0;
+    top: 52px;
+    height: 80px;
+    width: 100%;
+    background-color: lightgrey;
+    border-bottom: solid rgba(153, 153, 153, 0.527);
+    border-style: groove;
+}
+
+

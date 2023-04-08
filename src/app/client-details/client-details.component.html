@@ -1,0 +1,31 @@
+<div *ngIf="client" class="container client-details" #clientUpdate>
+    <h2>{{client.name}} Details</h2>
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+      <label for="clientId">Client ID:  </label>
+      <input type="number" class="form-control" #clientId formControlName="clientId" id="clientId" name="clientId" ><br>
+      </div>
+      <div class="form-group">
+      <label for="clientName">Name:   </label>
+      <input type="text" class="form-control" #clientName formControlName="clientName" id="clientName" name="clientName"> <br>
+      </div>
+      <div class="form-group">
+      <label for="clientEmail">Email:   </label>
+      <input type="email" class="form-control" #clientEmail formControlName="clientEmail" id="clientEmail" name="clientEmail"> <br>
+      </div>
+      <div class="form-group">
+      <label for="clientPhone">Phone:   </label>
+      <input type="tel" class="form-control" #clientPhone formControlName="clientPhone" id="clientPhone" name="clientPhone">
+      </div>
+  </form>
+  <br>
+  <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">
+    {{ successMessage }}
+  </ngb-alert>
+  <button type="submit" class="btn btn-outline-primary btn-lg" (click)="changeSuccessMessage()" (click)="save()">Save</button>
+  <button type="button" class="btn btn-outline-secondary btn-lg" (click)="goBack()">Go Back</button>
+  </div>
+
+  <div class="container">
+  <app-messages></app-messages>
+  </div>

@@ -1,0 +1,86 @@
+
+
+table {
+  margin-top: 150px;
+  position: relative;
+  table-layout: fixed;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 90%;
+  background-color: transparent; 
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  width: 100%;
+  max-width: 90%;
+  padding: 8px;
+}
+
+td {
+  padding: 6px;
+  width: auto;
+  margin-left: 0px;
+}
+
+.meeting-caption-span {
+    font-size: xx-large;
+    margin-right: 8px;
+    position: relative;
+  }
+
+  .meeting-caption {
+    margin-right: 8px;
+    position: relative;
+  }
+
+  #search-box {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  .createMeeting {
+    margin-left: 20px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  #blankcol {
+    width: 142px;
+  }
+
+  #detailsCol {
+    width: 66px;
+  }
+
+  #nameCol {
+    border-left: thin;
+    border-style: outset;
+  }
+
+  #phoneCol {
+    border-right: thin;
+    border-style: outset;
+  }
+
+  #headBody {
+    border: thin;
+    border-style: outset;
+    border-color: rgb(222, 226, 230);
+  }
+
+  .editDel {
+    border: thin;
+    border-style: groove;
+    border-color: rgb(222, 226, 230);
+  }
+
+  hr.calendar-break {
+    margin: auto;
+    border: 3px rgba(36, 35, 35, 0.884);
+    border-style: outset;
+    max-width: 80%;
+    border-radius: 50px;
+  }

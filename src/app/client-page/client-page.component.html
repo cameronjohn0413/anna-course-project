@@ -1,0 +1,86 @@
+
+<div class="container-fluid d-flex align-items-center justify-content-center w-auto">
+    <!-- id="wholediv" -->
+<table class="table table-striped table caption-top table-hover">
+    <!-- id="tableId1" -->
+
+<caption class="client-caption"><span class="client-caption-span">Clients</span>
+    <button class="add-button btn btn-primary createClient" (click)="addClicked = 'yes'" (click)="open(mymodal)" (click)="createClient()">
+        <a class="nav-link">Create Client</a></button>
+    <br>
+    <div class="search-box" id="search-box">
+    <label for="search-box" ></label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Filter by name, email, phone, or id" />
+    </div>
+    </caption>
+   
+    <thead class="table-light" id="headBody">
+        <tr id="rowId">
+            <th scope="col" id="blankcol"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col" id="detailsCol"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clientlist | filter:searchBox.value" id="rowId" >
+
+        <button type="button" class="btn btn-light editDel" (click)="editClicked = 'yes'" (click)="clientToUpdate = client" (click)="edit()" (click)="open(mymodal)">
+            <i class="fa fa-edit"></i>Edit</button>
+        <button class="btn btn-light editDel" title="delete client" type="button" (click)="delete(client)">
+        <i class="fa fa-remove"></i> Delete</button>
+
+        <td class="col-3" id="nameCol">{{client.name}}</td>
+        <td class="col-3">{{client.email}}</td>
+        <td class="col-3" id="phoneCol">{{client.phone}}</td>
+        <button class="btn btn-light client-details editDel" routerLink="/details/{{client.id}}"
+        type="button" id="client-details">Details</button>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- Modal -->
+<ng-template #mymodal let-modal>
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Client Details</h1>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+        <form #editInput [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="id" class="col-form-label">Client ID:  </label>
+            <input type="number" class="form-control" #clientId formControlName="clientId" id="clientId" name="id"><br>
+        </div>
+        <div class="form-group">
+            <label for="clientName" class="col-form-label">Name:   </label>
+            <input type="text" class="form-control" #clientName formControlName="clientName" id="clientName" name="clientName"> <br>
+        </div>
+        <div class="form-group">
+            <label for="clientEmail" class="col-form-label">Email:   </label>
+            <input type="email" class="form-control" #clientEmail formControlName="clientEmail" id="clientEmail" name="clientEmail"> <br>
+        </div>
+        <div class="form-group">
+            <label for="clientPhone" class="col-form-label">Phone:   </label>
+            <input type="tel" class="form-control" #clientPhone formControlName="clientPhone" id="clientPhone" name="clientPhone">
+        </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="addClicked = 'no'; editClicked = 'no'" (click)="modal.close('Ok click')">
+            Close</button>
+            <div *ngIf="editClicked !== 'yes'">
+                <button type="submit" class="btn btn-primary" (click)="saveCreate()" (click)="modal.close('Save click')">Add Client</button>
+            </div>
+            <div *ngIf="addClicked !== 'yes'">
+                <button type="submit" class="btn btn-primary" (click)="save()" (click)="modal.close('Save click')">Save</button>
+            </div>
+        </div>
+    </ng-template>
+
+<div class="container">
+<app-messages></app-messages>
+</div>
+
